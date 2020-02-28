@@ -1,0 +1,12 @@
+{
+  "name": "serverless-primer",
+  "version": "1.0.0",
+  "description": "Just for FUN",
+  "devDependencies": {
+    "aws-sdk": "2.604.0",
+    "serverless": "1.61.3",
+    "serverless-offline": "5.12.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
