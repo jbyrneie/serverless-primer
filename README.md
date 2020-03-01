@@ -115,6 +115,27 @@ Lambda functions assume an IAM (Identity and Access Management) role during ex
 
 When you use serverless invoke local, the situation is quite different: the role isn't available (the function is executed on your local machine), so unless you set a different user directly in the code (or via a key pair of environment variables), the AWS SDK will use the default profile specified inside your AWS credential configuration file.
 
+Checkout https://serverless.com/blog/abcs-of-iam-permissions/ to learn more about IAM Roles and Permissions.
+
+## ARNs
+
+Amazon Resource Names (ARNs) uniquely identify AWS resources. An ARN is required when you need to specify a resource unambiguously across all of AWS, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls.
+
+ARN is really just a globally unique identifier for an individual AWS resource. It takes one of the following formats.
+
+```
+arn:partition:service:region:account-id:resource
+arn:partition:service:region:account-id:resourcetype/resource
+arn:partition:service:region:account-id:resourcetype:resource
+```
+
+example ARN:
+
+```
+<!-- Object in an Amazon S3 bucket -->
+arn:aws:s3:::my_corporate_bucket/exampleobject.png
+```
+
 ## Deploying to AWS
 
 In order to deploy to AWS you need to have AWS credentials setup in ~/.aws/credentials
