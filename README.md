@@ -65,7 +65,7 @@ $ serverless invoke local --function hello
 Hello handler called......
 {
     "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v1.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
+    "body": "{\n  \"message\": \"hello handler executed successfully! Some value for MY_ENV_VAR\",\n  \"input\": \"\"\n}"
 }
 ```
 
@@ -91,6 +91,22 @@ To run the App
 
 ```
 $ serverless offline
+Serverless: Starting Offline: dev/us-east-1.
+
+Serverless: Routes for hello:
+Serverless: POST /{apiVersion}/functions/serverless-primer-dev-hello/invocations
+
+Serverless: Offline [HTTP] listening on http://localhost:3000
+Serverless: Enter "rp" to replay the last request
+
+Serverless: POST /v1/functions/serverless-primer-dev-hello/invocations (λ: hello)
+```
+
+You can make POST requests using the route of the Lambda function, example
+
+```
+$ curl -X POST http://localhost:3000/v1/functions/serverless-primer-dev-hello/invocations
+{"statusCode":200,"body":"{\n  \"message\": \"hello handler executed successfully! Some value for MY_ENV_VAR\",\n  \"input\": {\n    \"isOffline\": true,\n    \"stageVariables\": {}\n  }\n}"}
 ```
 
 ## AWS Roles
@@ -201,7 +217,7 @@ If you have deployed your App, you can invoke a Lambda function in AWS as follow
 $ AWS_PROFILE=playground sls invoke --function hello --data 'This is Jack'
 {
     "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v1.0! Your function executed successfully!\",\n  \"input\": \"This is Jack\"\n}"
+    "body": "{\n  \"message\": \"hello handler executed successfully! Some value for MY_ENV_VAR\",\n  \"input\": \"This is Jack\"\n}"
 }
 ```
 
