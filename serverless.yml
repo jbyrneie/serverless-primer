@@ -45,8 +45,8 @@ provider:
 #            - "/*"
 
 # you can define service wide environment variables here
-#  environment:
-#    variable1: value1
+  environment:
+    MY_ENV_VAR: 'Some value for MY_ENV_VAR'
 
 # you can add packaging information here
 #package:
@@ -57,6 +57,10 @@ provider:
 #    - exclude-me.js
 #    - exclude-me-dir/**
 
+custom:
+  settings:
+    apiVersion: 'v1'
+    
 functions:
   hello:
     handler: handler.hello
