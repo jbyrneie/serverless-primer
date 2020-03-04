@@ -116,5 +116,5 @@ functions:
 #       Description: "Description for the output"
 #       Value: "Some output value"
 plugins:
-      - serverless-offline
-      
+  - serverless-offline-sqs
+  - serverless-offline

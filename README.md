@@ -140,7 +140,7 @@ arn:aws:s3:::my_corporate_bucket/exampleobject.png
 
 In order to deploy to AWS you need to have AWS credentials setup in ~/.aws/credentials
 
-You can have multiple profiles, example [default] which contains AWS Production creds and [playground] containing AWS Playground (available via Galaxy) creds.
+You can have multiple profiles, example [default] which contains AWS Production creds and [playground] containing AWS Playground (AWS Personal/Free Account) creds.
 
 If you do not have AWS creds for the AWS Playground - follow the instructions in the [Setting up AWS Creds](#setting-up-aws-creds) section
 
